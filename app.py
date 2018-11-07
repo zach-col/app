@@ -17,6 +17,7 @@ def home():
 @app.route('/voiceupload/')
 def voiceupload():
     # upload api and upload
+
     # send text saying its uploaded
     # redirect to state
     return render_template('voiceupload.html')
