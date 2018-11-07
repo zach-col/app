@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-  <h2 id="header">Daily Mood Log</h2>
+  <h2 id="header">Daily Mood Logger</h2>
   <form class="form-horizontal" role="form" id="step1Form">
     <span style="float:left" align="left">    
       <div class="btn-group btn-group-sm" id="controls">
@@ -52,44 +52,6 @@
 
 <script>
 $('#divLoading').hide();
-
-$("#step1Form").submit(function(event) {
-  $('#step1Form').hide();
-  $('#step1Form').hide();
-  // progress bar animation
-  var $progressBar = $('.progress-bar');
-  setTimeout(function() {
-    $progressBar.css('width', '10%');
-    setTimeout(function() {
-      $progressBar.css('width', '30%');
-      setTimeout(function() {
-        $progressBar.css('width', '60%');
-        setTimeout(function() {
-          $progressBar.css('width', '90%');
-          setTimeout(function() {
-            $progressBar.css('width', '98%');
-          }, 3000); // WAIT 3 milliseconds
-        }, 3000); // WAIT 3 milliseconds
-      }, 3000); // WAIT 3 seconds
-    }, 3000); // WAIT 3 seconds
-  }, 1000); // WAIT 1 second
-});  // end of .submit
-
-
-function getInstallData(id, friendlyId){
-  google.script.run
-    .withSuccessHandler(function(data){
-      $('#exampleModalLongTitle').html('Install Details ('+ friendlyId +')');
-      $('#technical').html(data[0]);
-      $('#financial').html(data[1]);
-      $('#incentives').html(data[2]);
-      $('#policies').html(data[3]);
-      $('#location').html(data[4]);
-      $("#installDetails").modal();
-    })
-    .getInstallDetails(id);
-}
-
 </script>
 </body>
 </html>

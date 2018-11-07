@@ -15,8 +15,8 @@ var pauseButton = document.getElementById("pauseButton");
  
 //add events to those 3 buttons
 recordButton.addEventListener("click", startRecording);
-stopButton.addEventListener("click", stopRecording);
-pauseButton.addEventListener("click", pauseRecording);
+//stopButton.addEventListener("click", stopRecording);
+//pauseButton.addEventListener("click", pauseRecording);
 
 function startRecording() {
     console.log("recordButton clicked");
