@@ -1,2 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link href="./css/index.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+  <h2 id="header">Daily Mood Logger</h2>
+  <form class="form-horizontal" role="form" id="step1Form">
+    <span style="float:left" align="left">    
+      <div class="btn-group btn-group-sm" id="controls">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#help">HELP</button>
+        <button type="button" class="btn btn-primary" id="recordButton">RECORD</button>
+        <button type="button" class="btn btn-primary" id="uploadWav">UPLOAD</button>
+      </div>
+    </span><br><br><br>
+    <ol id="recordingsList"></ol>
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="./app.js"></script>
+  </form><!-- /form -->
 
-<h1>this is home</h1>
+  <div id="divLoading">
+    <p>Recording Started.. (10-sec)</p>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+    </div>
+  </div>
+</div> <!-- ./container -->
+
+<!-- Modal: Help -->
+<div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Help</h3>
+      </div>
+      <div id="divHelp">
+        Some help text would be nice.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+$('#divLoading').hide();
+</script>
+</body>
+</html>

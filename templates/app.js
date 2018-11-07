@@ -15,8 +15,8 @@ var pauseButton = document.getElementById("pauseButton");
  
 //add events to those 3 buttons
 recordButton.addEventListener("click", startRecording);
-stopButton.addEventListener("click", stopRecording);
-pauseButton.addEventListener("click", pauseRecording);
+//stopButton.addEventListener("click", stopRecording);
+//pauseButton.addEventListener("click", pauseRecording);
 
 function startRecording() {
     console.log("recordButton clicked");
@@ -32,9 +32,9 @@ function startRecording() {
     Disable the record button until we get a success or fail from getUserMedia()
     */
  
-    recordButton.disabled = true;
-    stopButton.disabled = false;
-    pauseButton.disabled = false
+    //recordButton.disabled = true;
+    //stopButton.disabled = false;
+    //pauseButton.disabled = false
  
     /*
     We're using the standard promise based getUserMedia()
@@ -61,11 +61,34 @@ function startRecording() {
  
         console.log("Recording started");
  
+        $('#divLoading').show();
+        var $progressBar = $('.progress-bar');
+        setTimeout(function() {
+        $progressBar.css('width', '20%');
+          setTimeout(function() {
+            $progressBar.css('width', '40%');
+            setTimeout(function() {
+              $progressBar.css('width', '60%');
+              setTimeout(function() {
+                $progressBar.css('width', '80%');
+                setTimeout(function() {
+                  $progressBar.css('width', '100%');
+                  $('#divLoading').hide();
+                  stopRecording();
+                  $progressBar.css('width', '0%');  // init. back
+                }, 2000); // WAIT 3 milliseconds
+              }, 2000); // WAIT 3 milliseconds
+            }, 2000); // WAIT 3 seconds
+          }, 2000); // WAIT 3 seconds
+        }, 2000); // WAIT 1 second
+
+
+
     }).catch(function(err) {
         //enable the record button if getUserMedia() fails
-        recordButton.disabled = false;
-        stopButton.disabled = true;
-        pauseButton.disabled = true
+        //recordButton.disabled = false;
+        //stopButton.disabled = true;
+        //pauseButton.disabled = true
     });
 }
 
@@ -86,12 +109,12 @@ function stopRecording() {
     console.log("stopButton clicked");
  
     //disable the stop button, enable the record too allow for new recordings
-    stopButton.disabled = true;
-    recordButton.disabled = false;
-    pauseButton.disabled = true;
+    //stopButton.disabled = true;
+    //recordButton.disabled = false;
+    //pauseButton.disabled = true;
  
     //reset button just in case the recording is stopped while paused
-    pauseButton.innerHTML="Pause";
+    //pauseButton.innerHTML="Pause";
  
     //tell the recorder to stop the recording
     rec.stop();

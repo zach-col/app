@@ -10,4 +10,3 @@ $ python app.py
 
 
 Sundew Shin
-
