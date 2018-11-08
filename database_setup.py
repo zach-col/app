@@ -16,5 +16,13 @@ class Day(Base):
     href = Column(String(250), nullable=False)
     text = Column(String(250), nullable=False)
 
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'date': self.date,
+            'href': self.href,
+            'text': self.text
+        }
 engine = create_engine('sqlite:///days.db')
 Base.metadata.create_all(engine)

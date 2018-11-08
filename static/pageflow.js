@@ -29,3 +29,8 @@ $('.navbar .transcripts').click(function(){
     $('.nav-item').removeClass('active');
     $('.nav-item.transcripts').addClass('active');
 });
+
+$('#cancelUpload').click(function(){
+    $('#recordingsList').hide();
+    $('#upload-complete-container').hide();
+});
