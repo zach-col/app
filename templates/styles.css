@@ -16,6 +16,10 @@
     width: 100px;
 }
 
+#recordButton:focus{
+    outline: 0px;
+}
+
 .transcript-table-container .header-text{
     font-family: Apercu;
     font-weight: 600;
