@@ -26,7 +26,7 @@ headers = {
     'Authorization': 'Bearer 01M_lVdLpTBXgCcW3PtIAXASKjrS7wx4tUrLCV2WXW10DvjzP16l0dnRLziUTMbc1hL5qBJvhePqCZHZiRveKx07DWJ2w',
     'Accept': 'text/plain',
 }
-response = requests.get('https://api.rev.ai/revspeech/v1beta/jobs/'+ jobId +'/transcript', headers=headers).json()
+response = requests.get('https://api.rev.ai/revspeech/v1beta/jobs/'+ jobId +'/transcript', headers=headers)
 
-print (response)
+print (response.text)
 
