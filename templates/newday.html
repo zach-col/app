@@ -1,0 +1,28 @@
+<form action="{{ url_for('newday') }}" method="post" class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="date">date:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" name="date">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="href">href:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" name="href">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="text">text:</label>
+  
+        <div class="col-sm-6">
+          <input type="text" size="30" class="form-control" name="text">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
