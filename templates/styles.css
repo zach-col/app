@@ -1,23 +1,35 @@
-.transcript-table-container{
-    display: none;
-}
-
 .transcript-table-container .header-row{
-    border-bottom: solid;
+    border-bottom: solid #FFDEA6;
 }
 
 #upload-complete-container{
     display: none;
 }
 
-.record-container{
-    display: none;
-}
-
-.home-container{
-    
-}
-
 .help-container{
     display: none;
+}
+
+#recordButton{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+.transcript-table-container .header-text{
+    font-family: Apercu;
+    font-weight: 600;
+    color: #FFDEA6;
+}
+
+.transcript-table-container .content-row{
+    padding-top: 5px;
+}
+
+.transcript-table-container{
+    padding-top: 32px;
+}
+
+.record-container .button-container{
+    padding-bottom: 10px;
 }
