@@ -36,12 +36,10 @@ def filename(file_name):
         'Content-Type': 'application/json',
     }
     print (file_name)
-
+    file_name =  'http://host.wednus.com/prosper/uploads/' + file_name
     # submit audio file
-    data = '{"media_url":"http://www.wavsource.com/snds_2018-06-03_5106726768923853/people/famous/king_injustice.wav","metadata":"This is a sample submit jobs option"}' 
-    # data = '{"media_url":"{}","metadata":"This is a sample submit jobs option"}'.format(file_name)
+    data = '{"media_url":"'+ file_name +'","metadata":"This is a sample submit jobs option"}'
     response = requests.post('https://api.rev.ai/revspeech/v1beta/jobs', headers=headers, data=data).json()
-    print ("got the id", response['id'])
 
     # check if audo file is done being transcribed
     jobId = response['id']
