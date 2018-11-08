@@ -52,12 +52,10 @@ function startRecording() {
                 setTimeout(function() {
                   $progressBar.css('width', '100%');
                   $('#divLoading').hide();
-                  stopRecording();
                   $progressBar.css('width', '0%');  // init. back
-                  setTimeout(function(){
-                      // show the upload complete message after progress bar finishes
-                    $('#upload-complete-container').show();
-                  }, 0);
+                  stopRecording();
+                  $('#divRecord').hide();
+                  $('#upload-complete-container').show();
                 }, 2000); // WAIT 2 milliseconds
               }, 2000); // WAIT 2 milliseconds
             }, 2000); // WAIT 2 seconds

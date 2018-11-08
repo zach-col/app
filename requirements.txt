@@ -1,3 +1,4 @@
+pyopenssl==18.0.0
 bleach==2.1.1
 certifi==2017.7.27.1
 chardet==3.0.4

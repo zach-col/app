@@ -22,11 +22,11 @@ def newday():
     return render_template('index.html')
 
 
-@app.route('/index', methods=['GET','POST'])
+@app.route('/logs', methods=['GET','POST'])
 def data():
     daycount = session.query(Day).count()
     days = session.query(Day).all()
-    return render_template('newfile.html', daycount = daycount, days = days)
+    return render_template('logs.html', daycount = daycount, days = days)
 
 
 @app.route('/file/<file_name>', methods=['GET','POST'])
@@ -75,4 +75,4 @@ def json():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, ssl_context='adhoc')
