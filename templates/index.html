@@ -4,14 +4,14 @@
   <base target="_top">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <nav class="navbar navbar-default">
-      <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Mind Log</a>
+          <a class="navbar-brand" href="#">Prosper</a>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,7 +34,7 @@
 
           <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> username <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Alex <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Logout</a></li>
                 </ul>
@@ -45,7 +45,6 @@
     </nav>
 
   <div class="container home-container">
-      <h1>home</h1>
   </div>
 
   <div class="container help-container">
@@ -53,13 +52,17 @@
   </div>
 
   <div class="container record-container">
-    <h1 id="header">Daily Mood Logger</h1>
+    <h1 class="center" id="header">Daily wellness tracker</h1>
     <form class="form-horizontal" role="form" id="step1Form">
-      <span style="float:left" align="left">    
-        <div class="btn-group btn-group-sm" id="controls">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#help">HELP</button>
-          <button type="button" class="btn btn-primary" id="recordButton">RECORD</button>
+      <span style="float:center;color:black" align="center">    
+        <div id="controls">
+          <button type="button" class="btn btn-success" id="recordButton">RECORD</button>
+          <br>
+          <br>
+          <p>Click record to create your daily wellness message</p>
+          <br><br>
           <button type="button" class="btn btn-primary" id="uploadWav">UPLOAD</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#help">HELP</button>
         </div>
       </span><br><br><br>
       <ol id="recordingsList"></ol>
@@ -82,26 +85,32 @@
   <div class="container" id="upload-complete-container">
       <div class="jumbotron">
           <h2>Upload complete</h2>
-          <a href="#" class="btn btn-success">View all thoughts</a>
+          <br>
           <form action="http://host.wednus.com/prosper/upload.php" method="post" enctype="multipart/form-data">
-              Select wav file to upload:
-              <input type="file" name="fileToUpload" id="fileToUpload">
-              <input type="submit" value="Upload Image" name="submit">
+              Select wav file to upload: <input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-primary">
+              <br><br>
+              <input type="submit" value="Upload wellness recording" name="submit" class="btn btn-primary">
           </form>
 
       </div>
   </div>
 
+
   <div class="container transcript-table-container">
+    <div class="jumbotron">
+    <span style="color:black">    
+        <h1 class="center">Recent wellness transcripts</h1>
+    </span>
+    <div class="customHr"></div>
     <div class="row header-row">
-      <span class="col-md-2 date-column header"> 
-        Date
+      <span class="col-md-2 date-column header mainColor"> 
+        Date created
       </span>
-      <span class="col-md-2 audio-column header"> 
+      <span class="col-md-2 audio-column header mainColor"> 
         Audio
       </span>
-      <span class="col-md-6 transcript-column header"> 
-        Text
+      <span class="col-md-6 transcript-column header mainColor"> 
+        Daily wellness message
       </span>
     </div>
     <div class="row content-row">
@@ -125,6 +134,7 @@
       <span class="col-md-6 transcript-column"> 
         It was a day. Mood stuff. Words.
       </span>
+    </div>
     </div>
   </div>
 

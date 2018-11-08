@@ -37,3 +37,28 @@
 .record-container .button-container{
     padding-bottom: 10px;
 }
+
+.navbar-inverse {
+    background-color: black;
+    border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.center{
+    text-align: center;
+}
+
+.customHr {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 35px;
+    margin-top: 24px;
+}
+
+.mainColor {
+    color: black;
+}
