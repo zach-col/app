@@ -62,3 +62,11 @@
 .mainColor {
     color: black;
 }
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+
+.masthead{
+    height: 536px;
+}

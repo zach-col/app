@@ -39,15 +39,16 @@ function startRecording() {
 
       console.log("Recording started");
 
-      $('#divRecording').hide();
+      $('#divRecording').html('(10 seconds left)');
       setTimeout(function() {
-        console.log("2-sec passed");
+        $('#divRecording').html('(8 seconds left)');
+        console.log("");
         setTimeout(function() {
-          console.log("2-sec passed");
+        $('#divRecording').html('(6 seconds left)');
           setTimeout(function() {
-            console.log("2-sec passed");
+          $('#divRecording').html('(4 seconds left)');
             setTimeout(function() {
-              console.log("2-sec passed");
+            $('#divRecording').html('(2 seconds left)');
               setTimeout(function() {
                 $('#divRecording').hide();
                 $('#divLoading').hide();

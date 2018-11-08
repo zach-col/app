@@ -7,7 +7,7 @@ import datetime
 
 app = Flask(__name__)
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base,Day
 
@@ -25,7 +25,7 @@ def newday():
 @app.route('/logs', methods=['GET','POST'])
 def data():
     daycount = session.query(Day).count()
-    days = session.query(Day).all()
+    days = session.query(Day).order_by('id desc').all()
     return render_template('logs.html', daycount = daycount, days = days)
 
 
