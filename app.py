@@ -35,7 +35,7 @@ def filename(file_name):
         'Authorization': 'Bearer 01M_lVdLpTBXgCcW3PtIAXASKjrS7wx4tUrLCV2WXW10DvjzP16l0dnRLziUTMbc1hL5qBJvhePqCZHZiRveKx07DWJ2w',
         'Content-Type': 'application/json',
     }
-    print file_name
+    print (file_name)
 
     # submit audio file
     data = '{"media_url":"http://www.wavsource.com/snds_2018-06-03_5106726768923853/people/famous/king_injustice.wav","metadata":"This is a sample submit jobs option"}' 
