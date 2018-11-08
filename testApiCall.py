@@ -22,11 +22,11 @@ while (response['status'] != 'transcribed'):
     time.sleep(0.1)
 
 # gets audio file text
-#newHeaders = {
-#    'Authorization': 'Bearer 01lmbrBli3wfUkywmTkQHX24P-EYBS3dd_m-eyBTZ2lGpKHvm29VlDO7zX123ciVqaNfmcaE6iUlzTw38-6QeQzDcvqVM',
-#    'Accept': 'text/plain',
-#}
-#newResponse = requests.get('https://api.rev.ai/revspeech/v1beta/jobs/%7Bid%7D/transcript', headers=headers)
-#response = requests.get('https://api.rev.ai/revspeech/v1beta/jobs/%3Cinsert%20job%20id%20here%3E', headers=headers)
+headers = {
+    'Authorization': 'Bearer 01M_lVdLpTBXgCcW3PtIAXASKjrS7wx4tUrLCV2WXW10DvjzP16l0dnRLziUTMbc1hL5qBJvhePqCZHZiRveKx07DWJ2w',
+    'Accept': 'text/plain',
+}
+response = requests.get('https://api.rev.ai/revspeech/v1beta/jobs/'+ jobId +'/transcript', headers=headers).json()
 
+print (response)
 

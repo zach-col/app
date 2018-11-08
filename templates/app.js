@@ -54,14 +54,15 @@ function startRecording() {
                   $('#divLoading').hide();
                   stopRecording();
                   $progressBar.css('width', '0%');  // init. back
+                  setTimeout(function(){
+                      // show the upload complete message after progress bar finishes
+                    $('#upload-complete-container').show();
+                  }, 0);
                 }, 2000); // WAIT 2 milliseconds
               }, 2000); // WAIT 2 milliseconds
             }, 2000); // WAIT 2 seconds
           }, 2000); // WAIT 2 seconds
         }, 2000); // WAIT 2 second
-
-
-
     }).catch(function(err) {
         //enable the record button if getUserMedia() fails
         //recordButton.disabled = false;

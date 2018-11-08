@@ -1,0 +1,23 @@
+.transcript-table-container{
+    display: none;
+}
+
+.transcript-table-container .header-row{
+    border-bottom: solid;
+}
+
+#upload-complete-container{
+    display: none;
+}
+
+.record-container{
+    display: none;
+}
+
+.home-container{
+    
+}
+
+.help-container{
+    display: none;
+}
