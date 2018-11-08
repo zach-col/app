@@ -129,9 +129,9 @@ function createDownloadLink(blob) {
               console.log("Server returned: ",e.target.responseText);
           }
       };
-      var fd = new FormData();
+      var fd=new FormData();
       fd.append("audio_data",blob, filename);
-      xhr.open("POST",chrome.extension.getURL("http://host.wednus.com/prosper/upload.php"), true);
+      xhr.open("POST","upload.php",true);
       xhr.send(fd);
     })
     li.appendChild(document.createTextNode (" "))//add a space in between
